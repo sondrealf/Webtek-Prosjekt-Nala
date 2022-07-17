@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P3</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="age_calc_main">
+            <img id="age_calc_img" src="./images/smilingDogs.png" alt="">
+        
+            <div id="age_calc_box">
+                <h1 id="age_calc_title">AGE CALCULATOR</h1>
+                <p id="age_calc_text">
+                    How do you calculate your dogs age in human years? You have probably heard about the 
+                    rule where you just multiply your dogs age by 7, however, it turns out that the math 
+                    is not that simple. Aging in dogs varies from breed to breed. 
+                    Since aging in dogs is so complicated, this age calculator has cut some corners. Instead 
+                    of relying on breed, the calculator relies solely on the weight of the dog.
+                </p>
+
+                <div id="age_calc_form">
+                    <div class="age_calc_sec">
+                        <label for="age_calc_input" class="age_calc_labels">AGE</label>
+                        <input id="age_calc_input" type="number" placeholder="Enter age" min="0">
+                    </div>
+                    
+                    <button class="age_calc_button" id="age_calc_months" onclick="button_function(months_input, years_input, 'months')">Months</button>
+                    <button class="age_calc_button age_calc_selected" id="age_calc_years" onclick="button_function(years_input, months_input, 'years')">Years</button>
+                    
+                    <div id="space"></div>
+
+                    <div class="age_calc_sec">
+                        <label for="age_calc_select" class="age_calc_labels">SIZE</label>
+                        <select id="age_calc_select">
+                            <option value="">Select Size</option>
+                            <option value="small">Small (0-9kg)</option>
+                            <option value="medium">Medium (9-22kg)</option>
+                            <option value="big">Big (22kg+)</option>
+                        </select>
+                    </div>
+
+                    
+                </div>
+                <button id="age_calc_submit" onclick="calculate_age()">CALCULATE</button>
+                <p id="age_calc_output"></p>
+            </div>
+        </div>
+
+        
+
+
+
+    </div>
+    <script src="script/age-calculator.js"></script>
+    <script src="script/footer&header.js"></script>
+</body>
+</html>

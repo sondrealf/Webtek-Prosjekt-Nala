@@ -1,0 +1,1194 @@
+/* 
+*  CSS TABLE OF CONTENTS
+*   
+*  1.0 - Header         Line: 50-145
+*  2.0 - Footer         Line: 146-183
+*  3.0 - Home           Line: 184-304
+*  4.0 - Diet           Line: 305-580
+*  5.0 - Dog Breed      Line: 581-702
+*  6.0 - Gallery        Line: 703-882
+*  7.0 - Age Calculator Line: 883-1068
+*  8.0 - Contact        Line: 1069-1175
+*/
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAF0CA;
+  flex-direction: column;
+  font-size: 1.1em;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+}
+
+.container{
+  padding-top: 80px;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*** 1.0 - HEADER ***/
+
+nav { 
+  border-bottom: 1px solid;
+  height: 80px;
+  display: flex;
+  position: fixed;
+  background-color: #EFE2BA;
+  z-index: 5;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.menu {
+  width: 13em;
+  height: 18px;
+  margin: 0 4px;
+  font-size: 0.8em;
+  background-color: #AFB7FF;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.menu:hover {
+  cursor: pointer;
+  background-color: hsl(234, 68%, 70%)
+}
+
+#aktiv {
+  background-color: #303549;
+  color: #C5CBE3;
+}
+#dropdown {
+  display: none;
+  height: 80px;
+  padding: 0;
+  justify-content: space-around;
+  align-items: center;
+}
+#dropdown:hover {
+  background-color: #EFE2BA;
+  cursor: default;
+}
+#dropimg {
+  height: 70%;
+}
+
+#dropbutton{
+  height: 50%;
+  cursor: pointer;
+  transition: 0.6s;
+}
+#droptext{
+  font-family: Roboto Condensed;
+  font-variant: small-caps;
+  font-weight: normal;
+}
+
+#dropimg:hover, #droptext:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 950px) {
+  .menu {
+    font-size: 0.65em;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  header {
+    position: fixed;
+    height: 81px;
+    z-index: 5;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.6s;
+  }
+  nav {
+    position: relative;
+    flex-direction: column;
+    height: auto;
+  }
+  #logoHead {
+    display: none;
+  }
+  #dropdown{
+    display: flex;
+    background-color: #EFE2BA;
+  }
+  .menu {
+    width: 100%;
+    background-color: #F8F3E2;
+    border-radius: 0px;
+    border-bottom: 1px solid black;
+    ;
+  }
+}
+
+/*** 2.0 - FOOTER ***/
+
+footer {
+  margin-top: auto;
+  padding: 5px 30px 5px 20px;
+  bottom: 0px;
+  font-size: 0.7em;
+  color: white;
+  background-color: #4056A1; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+.logoClass {
+  width: 40px;
+  height: 60px;
+  margin-left: 10px;
+}
+
+.logoClass:hover {
+  cursor: pointer;
+}
+
+.fbClass {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.fbClass:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .fbTextClass {
+    display: none;
+  }
+}
+
+
+/*** 3.0 - HOME ***/
+#hovedsideImg{
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  transform: translate(0px, 6px);
+}
+
+#introText{
+  text-align: center;
+  font-family: Roboto, Oxygen, sans-serif;
+  font-size: 1.2em;
+}
+
+#title{
+  text-align: center;
+  font-family: Roboto, Oxygen, sans-serif;
+}
+
+#title::first-letter{
+  font-size: 125%;
+}
+
+#textBubbleContainer{
+  position: absolute;
+  top: 16em;
+  right: 5em;
+}
+
+#textBubbleContainer>a>img{
+  width: 16em;
+}
+
+#textBubbleContainer>a>p{
+  font-family: Roboto, Oxygen, sans-serif;
+  font-size: 1.6em;
+  color: black;
+  position: absolute;
+  top: 1.8em;
+  left: 2.1em;
+}
+
+#contentContainer{
+  background-color: #fcf5df;
+  margin: auto;
+  width: 90%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding-bottom: 5em;
+  border: 3px solid #ffffff;
+  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr min(2fr) 1fr;
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.1em;
+}
+
+.contentContainer-item{
+  position: relative; 
+  background-color: #B5AFAF;
+  margin: 13% 13% 0 13%;
+}
+
+.contentContainer-item>img{
+  width: 70%;
+  margin: 15% 15% 15% 15%;
+}
+
+.contentContainer-item:hover{
+  border: 0.3em solid rgb(0, 0, 0, 0.2);
+}
+
+.item1{
+  grid-column: span 4;
+}
+
+.item3 > img, .item2 > img{
+  transform: translate(0px,10px);
+}
+
+.contentContainer-text{
+  text-align: center;
+  padding: 0em 2em 0em 2em;
+  line-height: 150%;
+}
+
+@media only screen and (max-width: 1225px){
+  #textBubbleContainer{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .item1{
+      grid-column: span 2;
+  }
+
+  .item3 > img, .item2 > img{
+    transform: translate(0px,0px);
+  }
+
+  #contentContainer{
+      grid-template-columns: 1fr 1fr; 
+      grid-column-gap: 0;
+      justify-content: space-around;
+  }
+
+  .contentContainer-item{
+      margin: 18% 18% 0 18%;
+  }
+
+  .contentContainer-text{
+      display: none;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .item1{
+      grid-column: span 1;
+  }
+
+  #contentContainer{
+      grid-template-columns: 1fr;
+  }
+
+  .contentContainer-item{
+      margin: 18% 18% 0 18%;
+  }
+}
+
+/*** 4.0 - DIET ***/
+
+#dietParent {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Overskriften skilt fra resten av siden */
+#dietChild1Div, #dietChild2Div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+} 
+
+#dietTextDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 150%;
+  width: 60%;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+#dietCalcDiv {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  flex-direction: column;
+}
+
+#smilingDogsDiv {
+  margin-top: 25px;
+  margin-bottom: -20px;
+  z-index: 1;
+}
+
+#dietInformationDiv {
+  background-color: #fff1f8;
+  width: 80%;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+/* Kalkulatoren på høyre siden av siden */
+#dietInputDiv {
+  margin-top: 50px;
+}
+
+#dietCalcTable td {
+    width: 200px;
+    height: 30px;
+}
+
+.dietCalcInput {
+  height: 50px;
+  width: 160px;
+  margin-bottom: 20px;
+  border: 1px solid lightgray;
+}
+
+.dietCalcButtonMonths {
+  width: 80px;
+  height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid lightgray;
+  background-color: white;
+  color: gray;
+}
+
+.dietCalcButtonYears {
+  width: 80px;
+  height: 50px;
+  border: 1px solid lightgray;
+  background-color:gray;
+  color: white;
+}
+
+.dietCalcButtonYears:hover, .dietCalcButtonMonths:hover, #dietSubmit:hover, .dietCalcInput:hover {
+  border: 1px solid black;
+}
+
+label {
+  font-size: 0.7em;
+}
+
+#dietSubmit {
+  border-radius: 20px;
+  width: 150px; 
+  height: 40px;
+  border: 1px solid lightgray;
+  color: black;
+  background-color: white;
+}
+
+/* Output del (daily plan) */
+#dietOutputDiv {
+  height: 350px;
+  width: 350px;
+  margin: 30px;
+  margin-left: 0px;
+  display: flex;
+  font-size: 0.8em;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: #ffb8b8;
+  
+}
+
+#dietOutputHeader {
+  background-color: lightcoral;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dietOutputContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mealDivClass {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  align-items: center;
+}
+
+.mealServingClass {
+  font: 0.3em;
+  position: relative;
+  bottom: 0px;
+  left: 20%;
+}
+
+.foodCheckPhotoClass {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+#foodNone {
+  display: none;
+}
+
+/* Id'en som starter animasjonen */
+#spinningFood {
+  display: flex;
+  animation-name: spin;
+  animation-duration: 1s; 
+  animation-iteration-count: 2;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+/* Unsafe foods del */
+#dietUnsafeFoodsDiv {
+  background-color: #ffb8b8;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 650px;
+  flex-direction: column;
+  margin-bottom: 100px;
+  padding-top: 25px;
+}
+
+#unsafeHeaderDiv {
+  display: flex;
+  justify-content: center;
+}
+
+#unsafeContentDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.unsafeDivs {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.unsafeImg:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 10px 100px red;
+  background-color: lightcoral;
+
+}
+
+/* Gjør siden responsiv */
+@media screen and (max-width: 950px) {
+  #dietChild2Div {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #dietCalcDiv, #dietTextDiv {
+    width: 100%;
+  }
+
+  #dietOutputDiv {
+    width: 70%;
+    max-width: 300px;
+  }
+  }
+
+  #dietUnsafeFoodsDiv {
+    max-width: 500px;
+    
+  }
+
+  #smilingDogsDiv {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+
+  
+
+@media screen and (max-width: 760px) {
+
+  #smilingDogsDiv {
+    margin-bottom: -15px;
+  }
+
+  #smilingDogs {
+    height: 60px;
+    width: 60%
+  }
+
+  #dietTitle {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #smilingDogsDiv {
+    margin-bottom: -10px;
+  }
+
+  #smilingDogs {
+    height: 40px;
+  }
+
+  #unsafeLearnmore {
+    font-size: 1em;
+  }
+
+  .unsafeText {
+    font-size: 0.8em;
+  }
+
+  #dietSubmit {
+    margin-left: 25%;
+  }
+
+  .dietCalcButtonYears, .dietCalcButtonMonths {
+    width: 70px;
+  }
+}
+
+/*** 5.0 - DOG BREED ***/
+
+#pb-all {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-right: 2%;  
+  margin-bottom: 40px;
+}
+
+.pb-outline {
+  background-color: white;
+  width: 350px;
+  height: 40px;
+  border-radius: 30px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 5px 5px black;
+}
+
+
+.pb-unit {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.pb-measure {
+  background-color: #93DE91;
+  border-radius: 30px;
+  height: 100%;
+}
+
+/* Animation and display of traits. */
+
+@keyframes progress {
+  0% {
+    width: 100%;
+  }
+}
+
+#barking-level {
+  animation: progress 2s;
+  width: 30%;
+}
+#shedding-level {
+  animation: progress 2s;
+  width: 45%;
+}
+#family-adaptability {
+  animation: progress 2s;
+  width: 92%;
+}
+#drooling-level {
+  animation: progress 2s;
+  width: 12%;
+}
+#trainability {
+  animation: progress 2s;
+  width: 80%;
+}
+
+/* Styling title and text */
+
+#breed-h1 {
+  text-align: center;
+  background-color: #fff1f8;
+  padding: 20px;
+  border-radius: 15px; 
+  margin-left: 25px;
+  margin-right: 25px;
+}
+#breed-text {
+  line-height: 150%;
+  background-color: #fff1f8;
+  float: left;
+  padding: 20px;
+  border-radius: 15px;
+  width: 40%;
+  transform: translate(0%, -50px);
+  margin-bottom: 40px;
+  margin-left: 25px;
+  padding: 25px 50px;
+}
+#breed-vectordog {
+  width: 300px;
+  margin-top: 200px;
+  transform: translate(10%);  
+}
+/* Making the page responsive */
+@media screen and (max-width: 1350px) {
+  #breed-vectordog {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0%;
+    transform: translate(0%);
+  }
+  #pb-all {
+    float: none;
+    margin-top: 0%; 
+    align-items: center;
+  }
+  #breed-text {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  #breed-text {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    padding: 20px;
+  }
+  #breed-h1 {
+    float: none;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*** 6.0 - GALLERY ***/
+
+#galleryTitle {
+  margin: 20px;
+  font-size: 3em;
+  text-align: center;
+  }
+
+#video {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+
+.poster {
+  display: inline-block;
+  position: relative;
+  background-color: #0000ff2f;
+  width: 17%;
+  height: 17vw;
+  cursor: pointer;
+  background-size: cover;
+  border: 2px solid #EFE2BA;
+  border-radius: 5px;
+}
+
+.poster:hover {
+  border: 2px solid #4242ff;
+}
+
+.bilder {
+  width: 69%;
+  border: 2px solid black;
+  background-color: #fff1f8;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  height: 13.8vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.bilde {
+  height: 9.8vw;
+  width: 9.8vw;
+  background-color: white;
+  border-radius: 5px;
+  background-size: cover;
+  transition: 0.1s;
+  border: 2px solid #fff1f8;
+}
+
+.bilde:hover{
+  border: 2px solid #4242ff;
+  cursor: pointer;
+}
+
+.mappe{
+  position: absolute;
+  right: -85%;
+  top: 15%;
+  width: 180%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.left{
+  animation: slideLeft 1s ease-Out;
+}
+.right{
+  animation: slideRight 1s ease-Out;
+}
+.darker{
+  animation: darker 0.2s ease-Out;
+}
+.lighter{
+  animation: lighter 0.2s ease-Out;
+}
+@keyframes slideLeft {
+  0% {
+    right: -85%;
+  }
+  100% {
+    right: 5%;
+  }
+}
+@keyframes slideRight {
+  0% {
+    right: 5%;
+  }
+  100% {
+    right: -85%;
+  }
+}
+@keyframes darker {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes lighter {
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.arrow-left {
+  position: absolute;
+  top: calc(50% - 1.7vw);
+  left: 2%;
+  border-top: 2.1vw solid transparent;
+  border-bottom: 2.1vw solid transparent; 
+  border-right: 3.5vw solid #afb7ffb0; 
+  transition: 0.1s;
+}
+.arrow-left:hover {
+  border-right: 3.5vw solid hsla(234, 100%, 72%, 0.69); 
+  cursor: pointer;
+}
+.arrow-right {
+  position: absolute;
+  top: calc(50% - 1.7vw);
+  right: 2%;
+  border-top: 2.1vw solid transparent;
+  border-bottom: 2.1vw solid transparent;
+  border-left: 3.5vw solid #afb7ffb0;
+  transition: 0.1s;
+}
+.arrow-right:hover {
+  border-left: 3.5vw solid hsla(234, 100%, 72%, 0.69);
+  cursor: pointer;
+}
+
+.play {
+  position: absolute;
+  top: calc(50% - 1.7vw);
+  right: calc(50% - 2.1vw);
+  border-top: 2.1vw solid transparent;
+  border-bottom: 2.1vw solid transparent;
+  border-left: 3.5vw solid hsla(0, 0%, 76%, 0.6);
+}
+
+#blackscreen {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  display: none;
+  justify-content: center;
+}
+
+.dark{
+  position: fixed;
+  top: 5%;
+  min-height: 50%;
+  max-height: 90%;
+  max-width: 90%;
+  border-radius: 5px;
+  border: 2px solid black;
+  display: none;
+}
+@media (max-aspect-ratio: 1/1) {
+  #video{
+    flex-direction: column;
+    align-items: center;
+  }
+  .poster{
+    width: 50vw;
+    height: 50vw;
+    margin-top: 20px;
+  }
+}
+
+
+
+/*** 7.0 - AGE CALCULATOR ***/
+
+#age_calc_main{
+  width: 60%;
+  margin: auto;
+}
+
+#age_calc_img{
+  margin: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 500px;
+  bottom: -25px;
+}
+
+#age_calc_box{
+  background-color: #FFF1F8;
+  padding: 50px;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 50px;
+  border-radius: 60px;
+}
+
+#age_calc_title{
+  font-weight: bold;
+  text-align: center;
+}
+
+#age_calc_text{
+  line-height: 150%;
+}
+
+.age_calc_labels{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#age_calc_form{
+  display: flex;
+  justify-content: center;
+  display: grid;
+  margin-top: 50px;
+  grid-template-columns: repeat(9, 1fr);
+  grid-gap: 15px;
+}
+
+.age_calc_sec{
+  grid-column: span 3;
+}
+
+#age_calc_input{
+  padding: 15px;
+  font-size: .8em;
+  outline: none;
+}
+
+.age_calc_button{
+  padding: 15px;
+  border: 1px solid #767676;
+  background-color: white;
+  cursor: pointer;
+  grid-column: span 1;
+  height: 50px;
+  box-shadow: 1px 1px #A6A6A6;
+  margin-top: 24px;
+  border-radius: 2px;
+}
+
+.age_calc_selected{
+  background-color: #828282;
+  color: white;
+  box-shadow: 0px 0px #A6A6A6;
+}
+
+#age_calc_select{
+  padding: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+#age_calc_submit{
+  background-color: white;
+  border: 1px solid #A6A6A6;
+  color: #A6A6A6;
+  padding: 15px;
+  border-radius: 100px;
+  display: block;
+  margin: 50px auto;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+  box-shadow: 1px 1px #A6A6A6;
+}
+
+#age_calc_submit:hover{
+  background-color: #A6A6A6;
+  border: 1px solid white;
+  color: white;
+  box-shadow: none;
+}
+
+#age_calc_output{
+  background-color: #C4C4C4;
+  margin: auto;
+  text-align: center;
+  box-shadow: 3px 3px #A6A6A6;
+}
+
+#space{
+  display: block;
+}
+
+@media screen and (max-width: 1400px) {
+  #age_calc_form{
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  }
+
+  #space{
+    display: none;
+  }
+
+  #age_calc_form{
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #age_calc_box{
+    border-radius: 50px;
+  }
+
+  #age_calc_img{
+    width: 400px;
+    bottom: -22px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #age_calc_box{
+    border-radius: 40px;
+  }
+
+  #age_calc_img{
+    width: 300px;
+    bottom: -15px;
+  }
+
+  #space{
+    display: none;
+  }
+
+  #age_calc_form{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #age_calc_select_label{
+    margin-top: 22px;
+  }
+
+  #age_calc_main{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #age_calc_box{
+    border-radius: 30px;
+  }
+
+  #age_calc_main{
+    width: 90%;
+  }
+
+  #age_calc_box{
+    padding: 30px;
+  }
+
+  #age_calc_title{
+    margin-top: 10px;
+  }
+}
+
+/*** 8.0 - CONTACT ***/
+
+#contactSection{
+  margin: 2em 0 0 6em;
+  display: inline-block;
+  width: 40%;
+}
+
+#contactForm{
+  background-color: #FFF1F8;
+  width: 75%;
+  padding-bottom: 1em;
+  border-radius: 10px;
+  box-shadow: 3px 3px #A6A6A6;
+}
+
+#subject{
+  margin: 0 5% 0.2em 5%;
+  width: 75%;
+  height: 2.3em;
+  font-family: arial, helvetica, sans-serif;
+  padding: 15px;
+  font-size: .8em;
+}
+
+#message{
+  margin: 0.2em 5% 0.2em 5%;
+  width: 75%;
+  font-family: arial, helvetica, sans-serif;
+  padding: 16px;
+  font-size: .8em;
+}
+
+#contactSubmit{
+  margin: 1em 5% 0 5%;
+  width: 90%;
+  background: white;
+  border: 1px solid black;
+  color: #A6A6A6;
+  font-size: .7em;
+  width: max-content;
+  padding: 10px;
+  cursor: not-allowed;
+}
+
+#contactNalaImg{
+  width: 25em;
+  border-radius: 2%;
+  box-shadow: 3px 3px #A6A6A6;
+}
+
+@media screen and (max-width: 917px) {
+  #contactSection, #contactNalaImg, #contactForm, .info{
+    display: block;
+    margin: auto;
+  }
+  #contactSection{
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .info{
+    width: 50%;
+  }
+}
+
+#faqDiv{
+  margin-bottom: 75px;
+}
+
+.faqChild{
+  width: 70%;
+  position: relative;
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  box-shadow: 3px 3px #A6A6A6;
+  padding-right: 4.8em; 
+}
+
+.faqChild>h3{
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.faqChild>img{
+  position: absolute;
+  width: 2.8em;
+  height: 1.5em;
+  right: 2em;
+  top: 1.8em;
+}
+
+.faqChild>p{
+  padding: 0 1em 1em 1.5em;
+  line-height: 150%;
+}
+
+.faqChild:hover{
+  background-color: #f0ecec;
+  cursor: pointer;
+}
+
+#faq{
+  margin-left: 15.5%;
+  margin-top: 5em;
+}
